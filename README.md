@@ -103,22 +103,22 @@ Calls first argument if "Truthy". If "Falsey" it either calls second argument or
 ```ruby
 using NoConditionals
 
-(3 > 2).maybe! -> { puts "True"  }, maybe: -> { puts "False"  }
+(3 > 2).maybe! -> { puts "True" }, maybe: -> { puts "False" }
 # True
 # => nil
 
-(1 > 2).maybe! -> { puts "True"  }, maybe: -> { puts "False"  }
+(1 > 2).maybe! -> { puts "True" }, maybe: -> { puts "False" }
 # False
 # => nil
 
-true.maybe! -> { puts "True"  }
+true.maybe! -> { puts "True" }
 # True
 # => nil
 
-false.maybe! -> { puts "True"  }
+false.maybe! -> { puts "True" }
 # => nil
 
-nil.maybe! -> { puts "True"  }
+nil.maybe! -> { puts "True" }
 # => nil
 ```
 
@@ -156,7 +156,7 @@ end
 
 ### Replacing Object#try() in Rails application views
 ```erb
-<%= @article.author.hence(&:name).otherwise {  "Anonymous"  } %>
+<%= @article.author.hence(&:name).otherwise { "Anonymous" } %>
 
 <%= current_user
       .hence(&:admin?)
