@@ -18,6 +18,28 @@ Or install it yourself as:
 
     $ gem install no_conditionals
 
+
+## Monkey patching Rails application
+This library uses refinement to extend objects. Alternatively, you may also do the following:
+
+Save this code to the Rails application folder as 'config/initializers/no_conditionals.rb'.
+```ruby
+# config/initializers/no_conditionals.rb
+
+Object.class_eval do
+  include NoConditionals::Truthiness
+end
+
+NilClass.class_eval do
+  include NoConditionals::Falseyness
+end
+
+FalseClass.class_eval do
+  include NoConditionals::Falseyness
+end
+```
+And then restart the server.
+
 ## Usage
 
 ### #hence method
@@ -154,27 +176,6 @@ class WeatherService
        .hence( &:weather )
        .otherwise { 'unknown weather' }
   end
-end
-```
-
-## Monkey patching Rails application
-
-1. Save the following code to your Rails application folder as 'config/initializers/no_conditionals.rb'.
-2. Restart the server.
-
-```ruby
-# config/initializers/no_conditionals.rb
-
-Object.class_eval do
-  include NoConditionals::Truthiness
-end
-
-NilClass.class_eval do
-  include NoConditionals::Falseyness
-end
-
-FalseClass.class_eval do
-  include NoConditionals::Falseyness
 end
 ```
 
