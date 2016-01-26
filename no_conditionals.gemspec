@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = NoConditionals::VERSION
   spec.authors       = ["Ritchie Paul Buitre"]
   spec.email         = ["ritchie@richorelse.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
-  spec.homepage      = ""
+  spec.summary       = %q{A support library, to aid in eliminating conditionals from application code, for Ruby 2.1 and above.}
+  spec.description   = %q{Because conditional statements, such as 'if-then-else', belong to lower levels of abstraction (ie. libraries or frameworks), and not in higher level domains like your application. This gem provides extentions for "Truthy" and "Falsey" classes with expressive yet Ruby idiomatic operations.}
+  spec.homepage      = "https://github.com/RichOrElse/no-conditionals"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
