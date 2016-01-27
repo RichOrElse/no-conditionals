@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Ritchie Paul Buitre"]
   spec.email         = ["ritchie@richorelse.com"]
   spec.summary       = %q{A support library, to aid in eliminating conditionals from application code, for Ruby 2.1 and above.}
-  spec.description   = %q{Because conditional statements, such as 'if-then-else', belong to lower levels of abstraction (ie. libraries or frameworks), and not in higher level domains like your application. This gem provides extentions for "Truthy" and "Falsey" classes with expressive yet Ruby idiomatic operations.}
+  spec.description   = %q{Conditional statements, like if/else, have it's place, under libraries and frameworks, but not in application code. This library implements a collection of techniques to avoid if/else, initially by extending "Truthy" and "Falsey" classes with expressive yet Ruby idiomatic operations. Please look forward for more features to come.}
   spec.homepage      = "https://github.com/RichOrElse/no-conditionals"
   spec.license       = "MIT"
 

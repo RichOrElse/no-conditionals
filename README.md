@@ -1,6 +1,6 @@
 # NoConditionals
 
-Conditional statements if/else have it's place, under libraries and frameworks, but not in application code. This library implements a collection of techniques to avoid if/else, such as extending "Truthy" and "Falsey" classes with expressive yet Ruby idiomatic operations.
+Conditional statements, like if/else, have it's place, under libraries and frameworks, but not in application code. This library implements a collection of techniques to avoid if/else, initially by extending "Truthy" and "Falsey" classes with expressive yet Ruby idiomatic operations. Please look forward for more features to come.
 
 ## Getting started
 
