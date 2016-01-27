@@ -47,55 +47,41 @@ Evaluates block if "Truthy" otherwise returns "Falsey"
 ```ruby
 using NoConditionals
 
-true.hence { "Yes" }
-# => "Yes"
+true.hence { "Yes" } # => "Yes"
 
-false.hence { "Yes" }
-# => false
+false.hence { "Yes" } # => false
 
-nil.hence { "Yes" }
-# => nil
+nil.hence { "Yes" } # => nil
 
-[1,2,3,4,5].find {|n| n.odd? }.hence {|odd| "found #{odd}" }
-# => "found 1"
+[1,2,3,4,5].find {|n| n.odd? }.hence {|odd| "found #{odd}" } # => "found 1"
 
-names = ["", "Ruby", "Smalltalk", nil ]
-names.first.hence(&:empty?)
-# => true
+["", "Ruby", "Smalltalk", nil ].first.hence(&:empty?) # => true
 ```
 ### #otherwise method
 Returns self if "Truthy" otherwise evaluates block.
 ```ruby
 using NoConditionals
 
-true.otherwise { "No" }
-# => true
+true.otherwise { "No" } # => true
 
-false.otherwise { "No" }
-# => "No"
+false.otherwise { "No" } # => "No"
 
-nil.otherwise { "No" }
-# => "No"
+nil.otherwise { "No" } # => "No"
 ```
 ### #maybe method
 Returns first argument if "Truthy". If "Falsey" it either returns second argument or returns "Falsey" when only one argument.
 ```ruby
 using NoConditionals
 
-(3 > 2).maybe "Yes", maybe: "No"
-# => "Yes"
+(3 > 2).maybe "Yes", maybe: "No" # => "Yes"
 
-(1 > 2).maybe "Yes", maybe: "No"
-# => "No"
+(1 > 2).maybe "Yes", maybe: "No" # => "No"
 
-true.maybe "Yes"
-# => "Yes"
+true.maybe "Yes" # => "Yes"
 
-false.maybe "Yes"
-# => false
+false.maybe "Yes" # => false
 
-nil.maybe "Yes"
-# => nil
+nil.maybe "Yes" # => nil
 ```
 
 ### #maybe! method
@@ -103,23 +89,15 @@ Calls first argument if "Truthy". If "Falsey" it either calls second argument or
 ```ruby
 using NoConditionals
 
-(3 > 2).maybe! -> { puts "True" }, maybe: -> { puts "False" }
-# True
-# => nil
+(3 > 2).maybe! -> { puts "True" }, maybe: -> { puts "False" } # True
 
-(1 > 2).maybe! -> { puts "True" }, maybe: -> { puts "False" }
-# False
-# => nil
+(1 > 2).maybe! -> { puts "True" }, maybe: -> { puts "False" } # False
 
-true.maybe! -> { puts "True" }
-# True
-# => nil
+true.maybe! -> { puts "True" } # True
 
-false.maybe! -> { puts "True" }
-# => nil
+false.maybe! -> { puts "True" } # => false
 
-nil.maybe! -> { puts "True" }
-# => nil
+nil.maybe! -> { puts "True" } # => nil
 ```
 
 ## Sample codes
@@ -127,7 +105,7 @@ nil.maybe! -> { puts "True" }
 ### Replacing if-else conditions in controllers
 ```ruby
 class SessionsController
-  # ...
+  ...
   using NoConditionals
 
   def create
@@ -137,7 +115,7 @@ class SessionsController
       .hence { logged_in(user) }
       .otherwise { unauthenticated }
   end
-  # ...
+  ...
 end
 ```
 
@@ -145,12 +123,12 @@ end
 ```ruby
 class User
   include NoConditionals::Truthiness
-  # ...
+  ...
 end
 
 class MissingUser
   include NoConditionals::Falseyness
-  # ...
+  ...
 end
 ```
 
