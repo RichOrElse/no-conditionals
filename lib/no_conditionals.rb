@@ -46,7 +46,7 @@ module NoConditionals
     end
 
     # calls keyword argument (maybe) or nothing
-    def maybe! so, maybe: -> {}
+    def maybe! so, maybe: -> { self }
       maybe.call
     end
   end

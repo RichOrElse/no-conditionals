@@ -20,7 +20,7 @@ class TestNoConditionals < Minitest::Test
 
   def test_it_refines_falsey_types
     [ nil, false, (1 > 2)].each do |flsy|
-      assert_equal nil, flsy.maybe!(-> {'Yes'})
+      assert_equal flsy, flsy.maybe!(-> {'Yes'})
       assert_equal 'No', flsy.maybe!(-> {'Yes'}, maybe: -> {'No'})
       assert_equal flsy, flsy.maybe('Yes')
       assert_equal 'No', flsy.maybe('Yes', maybe: 'No')

@@ -36,8 +36,8 @@ describe NoConditionals::Falseyness do
   end
 
   describe "#maybe! with one argument" do
-    it "calls nothing" do
-      @falsey.maybe!(-> { :yes }).must_be_same_as nil
+    it "calls nothing, returns itself" do
+      @falsey.maybe!(-> { :yes }).must_be_same_as @falsey
     end
   end
 
