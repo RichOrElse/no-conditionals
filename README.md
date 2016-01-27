@@ -1,6 +1,6 @@
 # NoConditionals
 
-Because conditional statements, such as 'if-then-else', belong to lower levels of abstraction (ie. libraries or frameworks), and not in higher level domains like your application. This gem provides extentions for "Truthy" and "Falsey" classes with expressive yet Ruby idiomatic operations.
+Conditional statements if/else have it's place, under libraries and frameworks, but not in application code. This library implements a collection of techniques to avoid if/else, such as extending "Truthy" and "Falsey" classes with expressive yet Ruby idiomatic operations.
 
 ## Getting started
 
