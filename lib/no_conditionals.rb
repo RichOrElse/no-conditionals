@@ -17,12 +17,12 @@ module NoConditionals
     end
 
     # just returns first parameter (so), ignores optional second parameter (maybe)
-    def maybe so, maybe: self
+    def maybe so, maybe: nil
       so
     end
 
     # calls first parameter (so)
-    def maybe! so, maybe: -> {}
+    def maybe! so, maybe: nil
       so.call
     end
   end
@@ -41,12 +41,12 @@ module NoConditionals
     end
 
     # ignores first parameter (so), returns either object or keyword argument (maybe)
-    def maybe so, maybe: self
+    def maybe _, maybe: self
       maybe
     end
 
-    # calls keyword argument (maybe) or nothing
-    def maybe! so, maybe: -> { self }
+    # calls keyword argument (maybe) or returns object
+    def maybe! _, maybe: -> { self }
       maybe.call
     end
   end
